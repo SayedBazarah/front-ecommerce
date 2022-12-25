@@ -1,0 +1,51 @@
+.container h1 {
+  color: #009879;
+  font-weight: 700;
+  font-size: 3.4rem;
+  text-align: center;
+}
+.container form {
+  width: 50%;
+  color: #009879;
+  margin: auto;
+}
+.basicInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 36px;
+}
+.basicInfo h2 {
+  margin-bottom: 20px;
+}
+.basicInfo div {
+  display: flex;
+  width: 100%;
+}
+.basicInfo div div {
+  align-self: center;
+  color: #009879;
+  font-size: 1.1rem;
+  width: 150px;
+}
+.basicInfo input {
+  flex: 1;
+  padding: 8px 20px;
+  border: 1px solid #009879;
+  outline: #009879;
+}
+.basicInfo input[type="file"] {
+  padding: 8px 0;
+  border: none;
+  outline: none;
+}
+.btn {
+  border: none;
+  background-color: #009879;
+  color: #fff;
+  padding: 8px 18px;
+  align-self: flex-end;
+  margin-top: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+}

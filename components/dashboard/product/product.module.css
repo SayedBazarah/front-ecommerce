@@ -1,0 +1,17 @@
+.container h1 {
+  color: #009879;
+  font-weight: 700;
+  font-size: 3.4rem;
+}
+
+.btn {
+  background-color: #009879;
+  color: white;
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}

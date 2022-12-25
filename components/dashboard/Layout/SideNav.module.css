@@ -1,0 +1,38 @@
+.container  {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #F4F5FA;
+    min-height: 90vh;
+    height: 100%;
+    padding: 25px 0;
+}
+.container li {
+    list-style: none;
+    padding-left: 20px;
+}
+.container li div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.container a {
+    color: black;
+    text-decoration: none;
+}
+.divider{
+ display: flex;
+ align-items: center;
+ gap: 20px
+}
+.divider div {
+    height: 3px;
+    background-color: #2e2e2e;
+}
+.divider div:nth-child(1){
+    width: 30px
+}
+.divider div:last-child{
+    width: 100%;
+    margin-right: 25px;
+}

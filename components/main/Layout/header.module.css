@@ -1,0 +1,125 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 20px;
+  margin: auto;
+  max-width: 1366px;
+}
+
+.shadow {
+  box-shadow: 0 2px 10px -1px #cbcaca;
+  background-color: white;
+  top: 0;
+  position: sticky;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  top: 0;
+}
+
+.noShadow {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.logo {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 4px;
+  background-color: #2e2e2e;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.list {
+  display: flex;
+  gap: 35px;
+}
+
+.nav a {
+  color: #2e2e2e;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.nav a:hover {
+  padding-bottom: 2px;
+  border-bottom: #2e2e2e 1px solid;
+  color: #2e2e2e;
+}
+
+.cart {
+  cursor: pointer;
+  display: flex;
+  gap: 20px;
+}
+.bag {
+  position: relative;
+}
+.bag div {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #fdb5ca;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.active {
+  padding-bottom: 2px;
+  border-bottom: #2e2e2e 1px solid;
+  color: #2e2e2e;
+}
+
+.login {
+}
+
+@media (max-width: 920px) {
+  .burger {
+    display: flex;
+  }
+
+  .list {
+    display: none;
+  }
+
+  .bg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    top: 70px;
+    right: 0;
+    padding-right: 50px;
+    gap: 20px;
+  }
+}

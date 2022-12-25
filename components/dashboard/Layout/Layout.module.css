@@ -1,0 +1,7 @@
+.row {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+.children{
+    padding: 25px;
+}
