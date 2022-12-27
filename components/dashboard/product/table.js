@@ -1,6 +1,11 @@
-import React from "react";
 import Style from "./table.module.css";
-function Table({ data }) {
+import { useRouter } from "next/router";
+import axios from "axios";
+
+function Table({ data, DeleteProduct }) {
+  console.log("data");
+  console.log(data);
+  const router = useRouter();
   return (
     <table className={Style.table}>
       <thead>
@@ -17,23 +22,50 @@ function Table({ data }) {
         </tr>
       </thead>
       <tbody>
-        {data.map((item) => (
-          <tr key={item._id}>
-            <td>{item.title}</td>
-            <td>{item.price}</td>
-            <td>{item.category}</td>
-            <td>{item.stock}</td>
-            <td>{item.weight}</td>
-            <td>{item["create-date"]}</td>
-            <td>{item.slug}</td>
-            <td>
-              <button className={Style.update}>Update</button>
-            </td>
-            <td>
-              <button className={Style.delete}>Delete</button>
-            </td>
-          </tr>
-        ))}
+        {data.map((item, index) => {
+          let createdAt = new Date(item.createdAt).toLocaleDateString("en-EG", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          });
+          return (
+            <tr key={index}>
+              <td>{item.title}</td>
+              <td>{item.price}</td>
+              <td>{item.category}</td>
+              <td>{item.stock}</td>
+              <td>{item.weight}</td>
+              <td>{createdAt}</td>
+              <td>{item.slug}</td>
+              <td>
+                <button
+                  className={Style.update}
+                  onClick={(e) => {
+                    router.push({
+                      pathname: "/dashboard/product/update",
+                      query: item,
+                    });
+                  }}
+                >
+                  Update
+                </button>
+              </td>
+              <td>
+                <button
+                  className={Style.delete}
+                  onClick={() => {
+                    let confirmation = confirm(
+                      "Do you want to delete " + item.title
+                    );
+                    if (confirmation) DeleteProduct(item.slug);
+                  }}
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );

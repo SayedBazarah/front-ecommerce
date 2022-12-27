@@ -10,6 +10,7 @@
 }
 .table th,
 .table td {
+  text-align: left;
   padding: 12px 15px;
 }
 .table tbody tr {
@@ -23,10 +24,7 @@
 .table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
 }
-.table tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
-}
+
 .table button {
   border: none;
   padding: 6px 16px;
