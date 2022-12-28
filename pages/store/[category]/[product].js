@@ -2,8 +2,7 @@ import ProductPage from "../../../components/main/store/ProductPage";
 import { useRouter } from "next/router";
 import axios from "axios";
 function Product({ product }) {
-  console.log(product);
-  return <ProductPage />;
+  return <ProductPage product={product} />;
 }
 
 export default Product;

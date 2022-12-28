@@ -10,13 +10,12 @@ const StoreComponents = ({ products }) => {
   return (
     <>
       <Hero title="STORE" img="/store/hero.jpg" />
-      <Filter />
       <div className={Style.container}>
-        <section className={Style.wrapper}>
+        <section className={Style.category}>
           <div className={Style.carts}>
-            <Cart title="WOMEN" img="/home/women.jpg" link="/store/women" />
-            <Cart title="MEN" img="/home/men.jpg" link="/store/men" />
-            <Cart title="KIDS" img="/home/kids.jpg" link="/store/kids" />
+            <Cart title="MEN" />
+            <Cart title="WOMEN" />
+            <Cart title="KIDS" />
           </div>
         </section>
         <section className={Style.bestselling}>
@@ -36,6 +35,7 @@ const StoreComponents = ({ products }) => {
                     img={product.thumbnail}
                     price={product.price}
                     url={url}
+                    key={product._id}
                   />
                 );
               })}
@@ -51,10 +51,11 @@ function Cart({ title, img, link }) {
   const router = useRouter();
 
   return (
-    <div className={Style.cart} style={{ backgroundImage: img }}>
-      <div className={Style.btn} onClick={() => router.push(link)}>
-        {title}
-      </div>
+    <div
+      className={Style.cart}
+      onClick={() => router.push(`/store/${title.toLowerCase()}`)}
+    >
+      <h3>{title}</h3>
     </div>
   );
 }

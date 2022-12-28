@@ -1,14 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import Style from "./header.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useRouter } from "next/router";
-
+import AuthContext from "../../../context/AuthProvider";
+import jwt from "jwt-decode";
 function Header() {
-  const [cartCount, setCartCount] = useState(0);
+  const { cart } = useContext(AuthContext);
   const [bg, setBg] = useState(false);
   const [shadow, setShadow] = useState(false);
   let route = useRouter();
+  const [status, setStatus] = useState(false);
 
   const router = route.pathname;
   const handleScroll = () => {
@@ -17,6 +19,8 @@ function Header() {
   };
 
   useEffect(() => {
+    let token = localStorage.getItem("token");
+    if (token) setStatus(true);
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -58,15 +62,6 @@ function Header() {
             </li>
             <li>
               <Link
-                href="/baby-care"
-                className={router == "/baby-care" ? Style.active : null}
-                onClick={() => setBg(false)}
-              >
-                Baby Care
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="/contacts"
                 className={router == "/contacts" ? Style.active : null}
                 onClick={() => setBg(false)}
@@ -75,13 +70,26 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link
-                href="/login"
-                className={router == "/login" ? Style.active : null}
-                onClick={() => setBg(false)}
-              >
-                Login
-              </Link>
+              {status ? (
+                <Link
+                  href="/"
+                  className={router == "/login" ? Style.active : null}
+                  onClick={() => {
+                    localStorage.setItem("token", "");
+                    route.reload();
+                  }}
+                >
+                  Logout
+                </Link>
+              ) : (
+                <Link
+                  href="/login"
+                  className={router == "/login" ? Style.active : null}
+                  onClick={() => setBg(false)}
+                >
+                  Login
+                </Link>
+              )}
             </li>
           </div>
 
@@ -93,20 +101,7 @@ function Header() {
                 width={25}
                 height={25}
               />
-              <div>{cartCount}</div>
-            </div>
-            <div onClick={() => route.push("/search")}>
-              <svg
-                height="17"
-                width="24"
-                viewBox="0 0 24 17"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g fill="currentColor" fillRule="nonzero">
-                  <path d="M19.121 12.864a.5.5 0 0 1 .707-.707l4 4a.5.5 0 0 1-.707.707l-4-4z"></path>
-                  <path d="M14.5 14a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zm0 1a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15zM5.5 1a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zM4.5 9a.5.5 0 0 1 0 1h-4a.5.5 0 0 1 0-1h4zM5.5 13a.5.5 0 1 1 0 1h-5a.5.5 0 1 1 0-1h5zM4.5 5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1 0-1h4z"></path>
-                </g>
-              </svg>
+              <div>{cart.length}</div>
             </div>
           </div>
         </div>

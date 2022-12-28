@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Style from "./product.module.css";
+import Style from "./productCart.module.css";
 const Product = ({ title, price, img, description, url }) => {
   return (
     <Link href={url} className={Style.container}>

@@ -1,0 +1,44 @@
+.container {
+    gap: 20px
+}
+
+.container,
+.container div {
+    display: flex;
+    flex-direction: column;
+}
+
+.container div input,
+.container div textarea {
+    min-height: 46px;
+    padding: 0 15px;
+    outline: none;
+    background-color: #F1F1F1;
+    border: none
+}
+
+.container div textarea {
+    padding-top: 15px
+}
+
+.container input[type='submit'] {
+    align-self: flex-start;
+    width: 151.9px;
+    height: 51.9px;
+    color: #fff;
+    background-color: #606060;
+    border: none;
+}
+
+/* Hidden input arrows */
+/* Chrome, Safari, Edge, Opera */
+.container input::-webkit-outer-spin-button,
+.container input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.container input[type=number] {
+    -moz-appearance: textfield;
+}

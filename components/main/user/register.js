@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const EMAIL_REGEX = /^\S+@\S+\.\S+$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = "/register";
+const REGISTER_URL = "/user";
 
 function RegisterForm() {
   const route = useRouter();
@@ -37,7 +37,6 @@ function RegisterForm() {
   const [matchFocus, setMatchFocus] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     userRef.current.focus();
@@ -78,7 +77,7 @@ function RegisterForm() {
       const response = await axios.post(REGISTER_URL, newUser);
       console.log(response);
       console.log(response.data);
-      route.push("/");
+      route.push("/login");
       //clear state and controlled inputs
       //need value attrib on inputs for this
       setUser("");

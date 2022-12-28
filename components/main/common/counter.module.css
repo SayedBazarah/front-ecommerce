@@ -1,0 +1,17 @@
+.count {
+  display: flex;
+  gap: 10px;
+}
+.count input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #2e2e2e;
+}
+.count button {
+  height: 40px;
+  width: 40px;
+  border: none;
+  font-size: 1.4rem;
+  background-color: #2e2e2e;
+  color: #fff;
+}

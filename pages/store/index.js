@@ -6,6 +6,7 @@ function Store({ data }) {
 
 export default Store;
 
+//Server-side rendering
 export async function getStaticProps() {
   try {
     const res = await axios.get("/product/simple");

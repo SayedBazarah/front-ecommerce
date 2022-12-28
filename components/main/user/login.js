@@ -54,8 +54,6 @@ function LoginForm() {
       }
       errRef.current.focus();
     }
-
-    console.log({ email, password });
   }
   return (
     <div className={Style.container}>

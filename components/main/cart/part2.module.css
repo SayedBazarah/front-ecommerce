@@ -1,0 +1,112 @@
+/* start page2 */
+.classStyle{
+    width: 770px;
+}
+.classStyle h2{
+    font-weight: bold;
+    font-size: 30px;
+}
+.classStyle p{
+ padding-bottom: 8px;
+}
+.classStyle_1{
+    width: 94%;
+    padding: 10px;
+    background-color: #F1F1F1;
+    border: none;
+}
+ .classStyle_2 {
+    padding-bottom: 17px;
+   padding-top: 17px;
+} 
+.classStyle_2 input[type='checkbox']{
+    margin-right: 10px;
+}
+.classStyle_3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.classStyle_3 input[type='button']{
+    width: 23%;
+    padding: 10px;
+    background-color: rgb(72, 26, 81);
+    border: none;
+    color: white;
+    font-size: 19px;
+}
+.classStyle_3 span{
+    color: rgb(131, 127, 127);
+    padding-right: 40px;
+}
+.classStyle_4{
+    padding-top: 20px;
+}
+.classStyle_4 h4{
+    font-weight: bold;
+    padding-top: 20px;
+}
+.classStyle_4 hr{
+    width: 93%;
+}
+.classStyle_5{
+    color: rgb(131, 127, 127); 
+}
+/* media */
+@media (max-width: 575px){
+    .classStyle_3 input[type='button']{
+        width: 60%;
+        padding: 10px;
+    }
+}
+@media (max-width: 767px) {
+    .classStyle{
+        width: 100%;
+        padding-left: 25px;
+    }
+    .classStyle_3{
+        display: flex;
+        flex-direction: column;
+    }
+    .classStyle_3 input[type='button']{
+        width: 50%;
+        padding: 10px;
+    }
+    .classStyle_3 span{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 991px) {
+    .classStyle{
+        width: 100%;
+        padding-left: 25px;
+    }
+    .classStyle_3{
+        display: flex;
+        flex-direction: column;
+    }
+    .classStyle_3 input[type='button']{
+        width: 40%;
+        padding: 10px;
+    }
+    .classStyle_3 span{
+        margin-top: 20px;
+       }
+}
+@media (max-width: 1199px) {
+    .classStyle{
+        width: 100%;
+        padding-left: 25px;
+    }
+    .classStyle_3{
+        display: flex;
+        flex-direction: column;
+    }
+    .classStyle_3 input[type='button']{
+        width: 32%;
+        padding: 10px;
+    }
+    .classStyle_3 span{
+        margin-top: 20px;
+       }
+}
